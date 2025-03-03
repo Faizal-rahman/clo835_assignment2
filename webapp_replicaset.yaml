@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: employees-rs
+  namespace: webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: employees
+        image: [YOUR-AWS-ACCOUNT-ID].dkr.ecr.[REGION].amazonaws.com/webapp:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DBHOST
+          value: "mysql.mysql.svc.cluster.local"
+        - name: DBPORT
+          value: "3306"
+        - name: DBUSER
+          value: "root"
+        - name: DBPWD
+          value: "Seneca@123"
+        - name: APP_COLOR
+          value: "blue"

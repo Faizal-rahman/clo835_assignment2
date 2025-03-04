@@ -45,8 +45,13 @@ docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:webapp:v
 kind load docker-image your-image:tag --name k8s-assignment (for both)
 
 
-kubectl get pods -n namespace(webapp or mysql)
+kubectl get pods -n namespace(webapp or mysql)   [for checking]
 
+# for creating a secret
+kubectl create secret docker-registry ecr-secret -n ()\
+  --docker-server=166147787843.dkr.ecr.us-east-1.amazonaws.com \
+  --docker-username=AWS \
+  --docker-password=$(aws ecr get-login-password --region us-east-1) 
 
 kubectl apply -f namespaces.yaml
 kubectl apply -f mysql_pod.yaml 

@@ -63,7 +63,11 @@ kubectl get svc -n mysql
 
 
 kubectl apply -f webapp_pod.yaml
+
+curl (in browser 8080 port) 
+
 kubectl apply -f webapp_service.yaml
+
 
 kubectl get svc -n webapp
 

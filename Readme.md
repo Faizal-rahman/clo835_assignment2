@@ -38,9 +38,9 @@ docker pull your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag (my
 
 docker pull your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag (webapp)
 
-docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag your-image:tag (mysql)
+docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:mysql:v1 (mysql)
 
-docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag your-image:tag (webapp)
+docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:webapp:v1 (webapp)
 
 kind load docker-image your-image:tag --name k8s-assignment (for both)
 

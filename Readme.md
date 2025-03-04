@@ -32,6 +32,8 @@ EOF
 # Create the cluster using the config
 kind create cluster --config kind-config.yaml --name k8s-assignment
 
+kubectl cluster-info
+
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com
 
 docker pull your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag (mysql)
@@ -72,3 +74,4 @@ kubectl apply -f webapp_replicaset.yaml
 kubectl apply -f mysql_deployment.yaml
 kubectl apply -f webapp_deployment.yaml
 
+kubectl get pods -n webapp -l app=employees

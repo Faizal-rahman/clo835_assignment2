@@ -57,8 +57,13 @@ kubectl apply -f namespaces.yaml
 kubectl apply -f mysql_pod.yaml 
 kubectl apply -f mysql_service.yaml
 
+kubectl get svc -n mysql
+
+
 kubectl apply -f webapp_pod.yaml
 kubectl apply -f webapp_service.yaml
+
+kubectl get svc -n webapp
 
 kubectl apply -f mysql_replicaset.yaml 
 kubectl apply -f webapp_replicaset.yaml 

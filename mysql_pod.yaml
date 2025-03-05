@@ -6,8 +6,6 @@ metadata:
   labels:
     app: mysql
 spec:
-  imagepullSecrets:
-  - name: ecr-secret
   containers:
   - name: mysql
     image: 166147787843.dkr.ecr.us-east-1.amazonaws.com/mysql-repo:mysql
@@ -18,3 +16,5 @@ spec:
       value: "Seneca@123"
     - name: MYSQL_DATABASE
       value: "employees"
+imagepullSecrets:
+  - name: ecr-secret

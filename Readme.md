@@ -38,11 +38,11 @@ kind create cluster --config kind-config.yaml --name k8s-assignment
 
 kubectl cluster-info
 
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123456789012.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 166147787843.dkr.ecr.us-east-1.amazonaws.com
 
-docker pull your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag (mysql)
+docker pull 166147787843.dkr.ecr.us-east-1.amazonaws.com/mysql-repo:mysql
 
-docker pull your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:tag (webapp)
+docker pull 166147787843.dkr.ecr.us-east-1.amazonaws.com/web-application-repo:mywebapp
 
 docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:mysql:v1 (mysql)
 

@@ -44,12 +44,15 @@ docker pull 166147787843.dkr.ecr.us-east-1.amazonaws.com/mysql-repo:mysql
 
 docker pull 166147787843.dkr.ecr.us-east-1.amazonaws.com/web-application-repo:mywebapp
 
-docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:mysql:v1 (mysql)
+docker tag 166147787843.dkr.ecr.us-east-1.amazonaws.com/mysql-repo:mysql mysql:v1
 
-docker tag your-account-id.dkr.ecr.your-region.amazonaws.com/your-image:webapp:v1 (webapp)
+docker tag 166147787843.dkr.ecr.us-east-1.amazonaws.com/web-application-repo:mywebapp webapp:v1
 
-kind load docker-image your-image:tag --name k8s-assignment (for both)
+kind load docker-image mysql:v1 --name k8s-assignment
 
+kind load docker-image webapp:v1 --name k8s-assignment
+
+kubectl apply -f namespaces.yaml   
 
 kubectl get pods -n namespace(webapp or mysql)   [for checking]
 
@@ -59,7 +62,6 @@ kubectl create secret docker-registry ecr-secret -n ()\
   --docker-username=AWS \
   --docker-password=$(aws ecr get-login-password --region us-east-1) 
 
-kubectl apply -f namespaces.yaml
 kubectl apply -f mysql_pod.yaml 
 kubectl apply -f mysql_service.yaml
 

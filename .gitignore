@@ -1,0 +1,5 @@
+.aws
+.bash*
+.git*
+.ssh
+.kube

@@ -6,8 +6,6 @@ metadata:
   labels:
     app: employees
 spec:
-  imagepullSecrets:
-  - name: ecr-secret
   containers:
   - name: employees
     image: 166147787843.dkr.ecr.us-east-1.amazonaws.com/web-application-repo:mywebapp
@@ -24,3 +22,5 @@ spec:
       value: "Seneca@123"
     - name: APP_COLOR
       value: "blue"
+  imagePullSecrets:  
+  - name: ecr-secret

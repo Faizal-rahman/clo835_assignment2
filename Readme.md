@@ -17,6 +17,10 @@ curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/
 
+# git
+git config --global user.name "Faizal"
+git config --global user.email "Faizalrahman2000@gmail.com"
+
 # Create a configuration file for kind
 cat <<EOF > kind-config.yaml
 kind: Cluster

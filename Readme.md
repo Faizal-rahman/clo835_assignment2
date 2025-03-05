@@ -57,11 +57,16 @@ kubectl apply -f namespaces.yaml
 kubectl get pods -n namespace(webapp or mysql)   [for checking]
 
 # for creating a secret
-kubectl create secret docker-registry ecr-secret -n ()\
+kubectl create secret docker-registry ecr-secret -n mysql \
   --docker-server=166147787843.dkr.ecr.us-east-1.amazonaws.com \
   --docker-username=AWS \
   --docker-password=$(aws ecr get-login-password --region us-east-1) 
 
+
+kubectl create secret docker-registry ecr-secret -n webapp \
+  --docker-server=166147787843.dkr.ecr.us-east-1.amazonaws.com \
+  --docker-username=AWS \
+  --docker-password=$(aws ecr get-login-password --region us-east-1) 
 kubectl apply -f mysql_pod.yaml 
 kubectl apply -f mysql_service.yaml
 

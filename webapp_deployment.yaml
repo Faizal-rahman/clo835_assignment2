@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: employees
-        image: [YOUR-AWS-ACCOUNT-ID].dkr.ecr.[REGION].amazonaws.com/webapp:v1
+        image: 166147787843.dkr.ecr.us-east-1.amazonaws.com/web-application-repo:mywebapp
         ports:
         - containerPort: 8080
         env:
